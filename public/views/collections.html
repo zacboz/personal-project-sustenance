@@ -1,0 +1,108 @@
+<div class='container'>
+    <div class='row'>
+
+    </br>
+    </br>
+    </br>
+    </br>
+
+
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Create Collection</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Create new collection</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Collection Name:</label>
+            <input type="text" class="form-control" id="recipient-name" placeholder="ie: Best Steakhouses" ng-model='collection_name'>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Collection Description:</label>
+            <textarea ng-model='collection_description' class="form-control" id="message-text" placeholder="ie: My favorite places for perfectly grilled steaks"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Collection Image:</label>
+            <input ng-model='collection_imageurl' placeholder="ie: insert image url" type="text" class="form-control" id="recipient-name" placeholder="ie: Best Steakhouses" ng-model='collection_name'>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click='createCollection(collection_name, collection_description, collection_imageurl, 1)'>Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <form>
+  <label>Add a Collection</label>
+  </br>
+  <label>Name of Collection</label>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">@</span>
+    <input ng-model='collection_name' type="text" maxlength="80" class="form-control" placeholder="ie: Best Steakhouses" aria-describedby="basic-addon1">
+  </div>
+  <label>Description</label>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">@</span>
+    <input ng-model='collection_description' type="text" maxlength="200" class="form-control" placeholder="ie: My favorite places for perfectly grilled steaks" aria-describedby="basic-addon1">
+  </div>
+  <label>Collection Image</label>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">@</span>
+    <input ng-model='collection_imageurl' type="text" maxlength="200" class="form-control" placeholder="ie: insert image url" aria-describedby="basic-addon1">
+  </div>
+  <input ng-click='createCollection(collection_name, collection_description, collection_imageurl, 1)' type='submit'>
+</form> -->
+
+
+
+
+
+
+    <h2>User Collections:</h2>
+
+    <div class='container' ng-repeat='collection in user_collections'>
+      <div class='row'>
+        <div class='col-sm-12'>
+
+          <div class="collection-card col-sm-4">
+            <span><img ng-src='{{collection.Imageurl}}'></span>
+            <h3 ui-sref='details'>{{collection.name}}</h3>
+            <h4>{{collection.description}}</h4>
+            <button>Delete Collection</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <h2>Public Collections:</h2>
+
+    <div class='container' ng-repeat='collection in public_collections'>
+      <div class='row'>
+        <div class='col-sm-12'>
+
+          <div class="collection-card col-sm-4">
+            <span><img ng-src='{{collection.Imageurl}}'></span>
+            <h3 ui-sref='details({collectionId: collection.id})'>{{collection.name}}</h3>
+            <h4>{{collection.description}}</h4>
+            <button ng-click='deleteCollection(collection)'>Delete Collection</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

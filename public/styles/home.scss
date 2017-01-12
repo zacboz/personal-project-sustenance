@@ -1,0 +1,126 @@
+$primary-color: #333;
+$font-stack:    Helvetica, sans-serif;
+$background-color: rgb(243, 243, 243);
+$card-color: white;
+$red: rgb(203, 32, 45);
+$kom: 'Komoda';
+$rating: rgb(91, 168, 41);
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $background-color;
+}
+
+.home-image {
+  height: 400px;
+  background-image: url('/images/GOURMET-STEAK.jpg');
+  background-position: left center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 80px;
+}
+
+.title-border {
+  height: 125px;
+  width: 240px;
+  border-style: solid;
+  border-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.title-text {
+  font-family: 'Komoda';
+  color: white;
+  font-size: 1000%;
+}
+
+.home-search {
+  color: white;
+  font-size: 200%;
+}
+
+#searchbar {
+  margin: 0 auto;
+  border: none;
+}
+
+.btn-default {
+  background-color: $red;
+  color: white;
+}
+
+.restaurant-row {
+  height: 150px;
+  width: 100%;
+  border-style: solid;
+  margin: 10px 10px;
+  background-color: $card-color;
+}
+
+img {
+  height: 144px;
+  width: 150px;
+  float: left;
+}
+
+.rest-title {
+  font-size: 175%;
+  color: $red;
+}
+
+.rating {
+  height: 23px;
+  width: 23px;
+  background-color: $rating;
+  color: white;
+  // display: flex;
+  // justify-content: space-around;
+}
+
+p {
+  font-size: 115%;
+}
+
+h3 {
+  font-size: 140%;
+}
+
+h4 {
+  font-size: 115%;
+}
+
+.collections-grid {
+  // background-color: red;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+.collection-card {
+  width: 450px;
+  height: 150px;
+  margin: 15px 0px;
+}
+
+.collection-image {
+  width: 150px;
+  height: 150px;
+  background-image: url("/images/kickassburger.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.collection-title {
+  width: 220px;
+  height: 150px;
+  background-color: $card-color;
+}

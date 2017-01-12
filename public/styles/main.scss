@@ -1,0 +1,36 @@
+$background-color: rgb(243, 243, 243);
+$kom: 'Komoda';
+$red: rgb(203, 32, 45);
+
+
+.navbar.transparent.navbar-inverse {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+
+
+
+body {
+  background-color: $background-color;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    color: white;
+    font-family: 'Komoda';
+    font-size: 350%;
+    background-color:
+}
+
+ul {
+  font-family: 'Komoda';
+  font-size: 300%;
+}
+
+footer {
+  padding: 20px 0;
+}

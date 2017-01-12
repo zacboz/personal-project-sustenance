@@ -1,0 +1,96 @@
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+  background-color: #f3f3f3; }
+
+.home-image {
+  height: 400px;
+  background-image: url("/images/GOURMET-STEAK.jpg");
+  background-position: left center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 80px; }
+
+.title-border {
+  height: 125px;
+  width: 240px;
+  border-style: solid;
+  border-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.title-text {
+  font-family: 'Komoda';
+  color: white;
+  font-size: 1000%; }
+
+.home-search {
+  color: white;
+  font-size: 200%; }
+
+#searchbar {
+  margin: 0 auto;
+  border: none; }
+
+.btn-default {
+  background-color: #cb202d;
+  color: white; }
+
+.restaurant-row {
+  height: 150px;
+  width: 100%;
+  border-style: solid;
+  margin: 10px 10px;
+  background-color: white; }
+
+img {
+  height: 144px;
+  width: 150px;
+  float: left; }
+
+.rest-title {
+  font-size: 175%;
+  color: #cb202d; }
+
+.rating {
+  height: 23px;
+  width: 23px;
+  background-color: #5ba829;
+  color: white; }
+
+p {
+  font-size: 115%; }
+
+h3 {
+  font-size: 140%; }
+
+h4 {
+  font-size: 115%; }
+
+.collections-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box; }
+
+.collection-card {
+  width: 450px;
+  height: 150px;
+  margin: 15px 0px; }
+
+.collection-image {
+  width: 150px;
+  height: 150px;
+  background-image: url("/images/kickassburger.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.collection-title {
+  width: 220px;
+  height: 150px;
+  background-color: white; }

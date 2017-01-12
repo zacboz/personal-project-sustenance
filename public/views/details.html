@@ -1,0 +1,181 @@
+<div class='container'>
+    <div class='row'>
+
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1">Edit Collection</button>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id='modal1'>
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">Edit your collection</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label">Collection Name:</label>
+                <input type="text" class="form-control" id="recipient-name" placeholder="update collection name ..." ng-model='collection_name'>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">Collection Description:</label>
+                <textarea ng-model='collection_description' class="form-control" id="message-text" placeholder="update your collection description ..."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label">Collection Image:</label>
+                <input ng-model='collection_imageurl' placeholder="update collection image ..." type="text" class="form-control" id="recipient-name" ng-model='collection_name'>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" ng-click='updateCollection(collection_name, collection_description, collection_imageurl, 1)'>Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2">Add Restaurants</button>
+
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="exampleModalLabel">Search for restaurants</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label">Location:</label>
+                <input ng-model='location' type="text" class="form-control" id="recipient-name" placeholder="Enter address, neighborhood, city, state or zip">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label">Key term:</label>
+                <input ng-model='term' type="text" class="form-control" id="recipient-name" placeholder="Search by key term">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" ng-click='searchTerm(term, location)'>Search</button>
+          </div>
+
+          <div class='container' ng-repeat='restaurant in restaurants.businesses'>
+            <div class='row'>
+              <div class='col-sm-12'>
+                <span><img width='10' ng-src='{{restaurant.image_url}}'></span>
+                <a href='{{restaurant.url}}'>{{restaurant.name}}</a>
+
+                <div class="rest-inner-left col-sm-8">
+                    <h3>{{restaurant.rating}}</h3>
+                    <h4>Price: {{restaurant.price}} Type: {{restaurant.categories}}</h4>
+                    <p>{{restaurant.location.city}}</p>
+                </div>
+
+                <div class="rest-inner-right col-sm-4">
+                  <button ng-click='addRestaurant(restaurant)'>Add Restaurant</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- <form>
+
+      <label>Name of Collection</label>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input ng-model='collection_name' type="text" maxlength="80" class="form-control" placeholder="ie: Best Steakhouses" aria-describedby="basic-addon1">
+      </div>
+      <label>Description</label>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input ng-model='collection_description' type="text" maxlength="200" class="form-control" placeholder="ie: My favorite places for perfectly grilled steaks" aria-describedby="basic-addon1">
+      </div>
+      <label>Collection Image</label>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <input ng-model='collection_imageurl' type="text" maxlength="200" class="form-control" placeholder="ie: insert image url" aria-describedby="basic-addon1">
+      </div>
+      <input ng-click='updateCollection(collection_name, collection_description, collection_imageurl, 1)' type='submit'>
+    </form> -->
+
+
+  <!-- <div class="row">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
+        <input ng-model='location' type="text" maxlength="80" class="form-control" placeholder="Enter address, neighborhood, city, state or zip">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-group">
+        <input ng-model='term' type="text" maxlength="80" class="form-control" placeholder="Search by key term">
+        <span class="input-group-btn">
+          <button ng-click='searchTerm(term, location)' class="btn btn-default" type="button">Go!</button>
+        </span>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <div class='container' ng-repeat='restaurant in restaurants.businesses'>
+    <div class='row'>
+      <div class='col-sm-12'>
+        <span><img width='10' ng-src='{{restaurant.image_url}}'></span>
+        <a href='{{restaurant.url}}'>{{restaurant.name}}</a>
+
+        <div class="rest-inner-left col-sm-8">
+            <h3>{{restaurant.rating}}</h3>
+            <h4>Price: {{restaurant.price}} Type: {{restaurant.categories}}</h4>
+            <p>{{restaurant.location.city}}</p>
+        </div>
+
+        <div class="rest-inner-right col-sm-4">
+          <button ng-click='addRestaurant(restaurant)'>Add Restaurant</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class='col-sm-12'>
+    <h1>{{restaurantCollection[0].title}}</h1>
+    <p>{{restaurantCollection[0].description}}</p>
+  </div>
+
+
+  <div class='container' ng-repeat='restaurant in restaurantCollection'>
+    <div class='row'>
+      <div class='col-sm-12'>
+
+      </div>
+
+      <div class='col-sm-3'>
+        <span><img width='10' ng-src='{{restaurant.image_url}}'></span>
+        <p>{{restaurant.name}}</p>
+        <p>{{restaurant.rating}}</p>
+        <p>{{restaurant.price}}</p>
+        <p>{{restaurant.categories}}</p>
+      </div>
+      <button ng-click='removeRestaurant(restaurant)'>Remove</button>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+</div>
