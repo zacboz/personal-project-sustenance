@@ -34,51 +34,28 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" ng-click='createCollection(collection_name, collection_description, collection_imageurl, 1)'>Create</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click='refresh()'>Close</button>
+        <button type="button" class="btn btn-primary" ng-click='createCollection(collection_name, collection_description, collection_imageurl)'>Create</button>
       </div>
     </div>
   </div>
 </div>
 
 
-<!-- <form>
-  <label>Add a Collection</label>
-  </br>
-  <label>Name of Collection</label>
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">@</span>
-    <input ng-model='collection_name' type="text" maxlength="80" class="form-control" placeholder="ie: Best Steakhouses" aria-describedby="basic-addon1">
-  </div>
-  <label>Description</label>
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">@</span>
-    <input ng-model='collection_description' type="text" maxlength="200" class="form-control" placeholder="ie: My favorite places for perfectly grilled steaks" aria-describedby="basic-addon1">
-  </div>
-  <label>Collection Image</label>
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1">@</span>
-    <input ng-model='collection_imageurl' type="text" maxlength="200" class="form-control" placeholder="ie: insert image url" aria-describedby="basic-addon1">
-  </div>
-  <input ng-click='createCollection(collection_name, collection_description, collection_imageurl, 1)' type='submit'>
-</form> -->
-
-
-
-
-
-
     <h2>User Collections:</h2>
 
-    <div class='container' ng-repeat='collection in user_collections'>
+    <div class='container'>
       <div class='row'>
-        <div class='col-sm-12'>
+        <div class='col-xs-12 collections-grid'>
 
-          <div class="collection-card col-sm-4">
-            <span><img ng-src='{{collection.Imageurl}}'></span>
-            <h3 ui-sref='details'>{{collection.name}}</h3>
-            <h4>{{collection.description}}</h4>
-            <button>Delete Collection</button>
+          <div class="collection-card col-xs-4" ng-repeat='collection in user_collections'>
+            <div class='collection-image col-xs-1'><span class='rest-image'><img ng-src='{{collection.imageurl}}'></span>
+            </div>
+            <span class='collection-title col-xs-3'>
+              <h3 ui-sref='details({collectionId: collection.id})'><strong>{{collection.name}}</strong></h3>
+              <h4>{{collection.description}}</h4>
+              <button class='delete-btn' ng-click='deleteCollection(collection)'>Delete</button>
+            </span>
           </div>
 
         </div>
@@ -88,15 +65,18 @@
 
     <h2>Public Collections:</h2>
 
-    <div class='container' ng-repeat='collection in public_collections'>
+    <div class='container'>
       <div class='row'>
-        <div class='col-sm-12'>
+        <div class='col-xs-12 collections-grid'>
 
-          <div class="collection-card col-sm-4">
-            <span><img ng-src='{{collection.Imageurl}}'></span>
-            <h3 ui-sref='details({collectionId: collection.id})'>{{collection.name}}</h3>
-            <h4>{{collection.description}}</h4>
-            <button ng-click='deleteCollection(collection)'>Delete Collection</button>
+          <div class="collection-card col-xs-4" ng-repeat='collection in public_collections'>
+            <div class='collection-image col-xs-1'><span class='rest-image'><img ng-src='{{collection.imageurl}}'></span>
+            </div>
+            <span class='collection-title col-xs-3'>
+              <h3 ui-sref='details({collectionId: collection.id})'><strong>{{collection.name}}</strong></h3>
+              <h4>{{collection.description}}</h4>
+              <button class='delete-btn' ng-click='deleteCollection(collection)'>Delete</button>
+            </span>
           </div>
 
         </div>

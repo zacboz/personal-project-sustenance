@@ -10,13 +10,14 @@ getPublicCollections: function(req, res) {
 },
 
 getUserProfile: function(req, res) {
-  console.log(req.user);
+  // console.log('CURRENT USER', req.user);
   res.send(req.user);
 },
 
 getUserCollections: function(req, res) {
-  db.read_personalCollections(function(err, response){
-    // console.log('getting user', response);
+  // console.log('||||||||||||||||||',req.user);
+  db.read_personalCollections([req.user.userid], function(err, response){
+    console.log('getting user collection', response);
     res.status(200).json(response);
   });
 },
@@ -58,13 +59,15 @@ deleteCollection: function(req, res) {
   var recordId = record.collectionId;
   console.log(recordId);
   if (recordId) {
-    db.delete_collection([recordId], function(err, response) {
+    db.delete_restaurantCollection([recordId], function(err, response){
       if (err){
         console.log(err);
-      } else {
-        console.log('deleting collection')
-        res.status(200).json(response);
       }
+        console.log('deleting restaurant from restaurantCollection', response)
+        db.delete_collection([recordId], function(err, response){
+          console.log('deleting collection', response);
+          res.status(200).json(response);
+        })
     });
   }
 },
@@ -109,6 +112,15 @@ removeRestaurant: function(req, res) {
         })
     });
   }
+},
+
+getUser: function(req, res) {
+
 }
+
+
+
+
+
 
 };

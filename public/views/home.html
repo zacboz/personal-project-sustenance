@@ -6,7 +6,8 @@
       <div class='title-border'>
         <h1 class='title-text'>Sustenance</h1>
       </div>
-      <div class="searchbar col-sm-8">
+      <div class="searchbar col-xs-2"></div>
+      <div class="searchbar col-xs-8">
         <h2 class='home-search'>Find the best restaurants, cafes, and bars in every City</h2>
       <div class="input-group">
         <span class="input-group-addon" id="sizing-addon1">Location:</span>
@@ -16,6 +17,8 @@
         </span>
       </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
+    <div class="searchbar col-xs-2"></div>
+
   </div><!-- /.row -->
 </div><!-- /.container -->
 
@@ -25,20 +28,18 @@
 
       <div class='container'>
         <div class='row' ng-repeat='restaurant in restaurants.businesses'>
-          <div class='restaurant-row col-sm-12'>
-            <span class='rest-image'><img ng-src='{{restaurant.image_url}}'></span>
+          <div class='restaurant-row col-xs-10'>
+            <span><img class='rest-image' ng-src='{{restaurant.image_url}}'></span>
 
-            <div class="rest-inner-left col-sm-6">
+            <div class="rest-inner-left col-xs-6">
               <a class='rest-title' href='{{restaurant.url}}'> {{restaurant.name}}</a>
 
-                <div class='rating'><h3>{{restaurant.rating}}</h3></div>
+                <div class='rating'>{{restaurant.rating}}</div>
                 <p>Price: {{restaurant.price}} </p>
                 <p>Type: {{restaurant.categories}}</p>
-                <p>{{restaurant.display_phone}}</p>
-
             </div>
 
-            <div class="rest-inner-right col-sm-4">
+            <div class="rest-inner-right col-xs-4">
               <p>{{restaurant.location.city}}</p>
               <p>{{restaurant.display_phone}}</p>
               <p>{{restaurant.location.display_address}}</p>
@@ -48,19 +49,19 @@
       </div>
 
 
-      <div class='container collections-grid col-sm-12'>
+      <div class='container'>
         <div class='row'>
-          <!-- <div class='collections-grid col-sm-12'> -->
           <h2><strong>Collections</strong></h2>
           <p>Explore curated lists of top restuarants in your area</p>
-
-              <div class='collection-card col-sm-4' ng-repeat='collection in collections'>
-                <div class='collection-image col-sm-1'></div>
-                <span class='collection-title col-sm-3'>
+          <div class='col-xs-12 collections-grid'>
+              <div class='collection-card col-xs-4' ng-repeat='collection in collections'>
+                <div class='collection-image col-xs-1'><span class='rest-image'><img ng-src='{{collection.imageurl}}'></span>
+                </div>
+                <span class='collection-title col-xs-3'>
                   <h3 ui-sref='details({collectionId: collection.id})'><strong>{{collection.name}}</strong></h3>
                   <h4>{{collection.description}}</h4>
                 </span>
               </div>
-          <!-- </div> -->
+          </div>
         </div>
       </div>

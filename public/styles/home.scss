@@ -13,7 +13,7 @@ body {
 }
 
 .home-image {
-  height: 400px;
+  height: 450px;
   background-image: url('/images/GOURMET-STEAK.jpg');
   background-position: left center;
   background-size: cover;
@@ -21,6 +21,7 @@ body {
   align-items: center;
   justify-content: space-around;
   padding-top: 80px;
+  margin-top: -25px;
 }
 
 .title-border {
@@ -31,6 +32,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 0 auto;
 }
 
 
@@ -38,16 +40,21 @@ body {
   font-family: 'Komoda';
   color: white;
   font-size: 1000%;
+  text-align: center;
 }
 
 .home-search {
   color: white;
   font-size: 200%;
+  text-align: center;
 }
 
-#searchbar {
-  margin: 0 auto;
+.input-group {
+  text-align: center;
   border: none;
+  outline: 0;
+  // margin: 0 auto;
+  // float: none;
 }
 
 .btn-default {
@@ -58,20 +65,30 @@ body {
 .restaurant-row {
   height: 150px;
   width: 100%;
-  border-style: solid;
   margin: 10px 10px;
   background-color: $card-color;
+  position: relative;
 }
 
-img {
-  height: 144px;
+.rest-image {
+  height: 150px;
   width: 150px;
   float: left;
+  margin: 0px 0px 0px -15px;
+}
+
+.rest-inner-left {
+  padding: 0px 0px 0px 0px;
+}
+
+.rest-inner-right {
+  padding: 0px 0px 0px 0px;
 }
 
 .rest-title {
   font-size: 175%;
   color: $red;
+  padding: 0px 0px 0px 0px;
 }
 
 .rating {
@@ -79,8 +96,10 @@ img {
   width: 23px;
   background-color: $rating;
   color: white;
-  // display: flex;
-  // justify-content: space-around;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 8px;
 }
 
 p {
@@ -109,6 +128,8 @@ h4 {
   width: 450px;
   height: 150px;
   margin: 15px 0px;
+  padding: 0px 0px;
+  border-radius: 5%;
 }
 
 .collection-image {

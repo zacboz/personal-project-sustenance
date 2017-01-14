@@ -1,0 +1,61 @@
+$red: rgb(203, 32, 45);
+$rating: rgb(91, 168, 41);
+$card-color: white;
+
+p {
+  font-size: 115%;
+}
+
+h3 {
+  font-size: 140%;
+}
+
+h4 {
+  font-size: 115%;
+}
+
+.collections-grid {
+  // background-color: red;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+.collection-card {
+  width: 450px;
+  height: 150px;
+  margin: 15px 0px;
+  border-radius: 20%;
+  position: relative;
+}
+
+.collection-image {
+  width: 150px;
+  height: 150px;
+  background-image: url("/images/kickassburger.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.collection-title {
+  width: 220px;
+  height: 150px;
+  background-color: $card-color;
+}
+
+.btn .btn-primary {
+  background-color: $rating;
+}
+
+.delete-btn {
+  background-color: $red;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

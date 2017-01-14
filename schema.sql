@@ -26,6 +26,6 @@ CREATE TABLE restaurants (
 
 CREATE TABLE restaurantCollection (
   Id SERIAL PRIMARY KEY,
-  restaurantId INT references restaurants(id),
-  collectionId INT references collections(Id)
+  restaurantId INT references restaurants(id) ON DELETE CASCADE,
+  collectionId INT references collections(Id) ON DELETE CASCADE
 );

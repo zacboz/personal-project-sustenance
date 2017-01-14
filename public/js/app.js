@@ -4,7 +4,7 @@ var login = {
        .catch((err) => {
          console.log(err);
          if(err.status === 401){
-           $state.go("login");
+           $state.go("login");s
          } else if (err.status === 403){
            $state.go("home");
          }
@@ -12,8 +12,7 @@ var login = {
    }
  }
 
-
-angular.module('sustenance', ['myLoginCheck'], ['ui.router'])
+angular.module('sustenance', ['ui.router'])
     .config(function( $stateProvider, $urlRouterProvider){
 
         $stateProvider
@@ -30,8 +29,7 @@ angular.module('sustenance', ['myLoginCheck'], ['ui.router'])
             .state('collections',{
                 url:'/collections',
                 templateUrl: '/views/collections.html',
-                controller: 'collectionsCtrl',
-                resolve: login
+                controller: 'collectionsCtrl'
             })
             .state('details',{
                 url:'/details/:collectionId',

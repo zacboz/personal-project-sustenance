@@ -1,24 +1,19 @@
-angular.module('sustenance').controller('collectionsCtrl', function($scope, mainSrvc, $stateParams){
+angular.module('sustenance').controller('collectionsCtrl', function($scope, $rootScope, mainSrvc, $stateParams){
 
-$scope.test = 'hello world';
+$scope.refresh = function(){
+
+
 
   mainSrvc.getPublicCollections().then(function(response){
     $scope.public_collections = response.data;
     console.log($scope.public_collections);
   });
 
-  mainSrvc.getUserCollections().then(function(response){
-    $scope.user_collections = response.data;
-    console.log($scope.user_collections);
-  });
-
-  $scope.createCollection = function(Name, Description, Imageurl, userId) {
-    console.log(userId);
-    mainSrvc.createCollection(Name, Description, Imageurl, userId);
+  $scope.createCollection = function(Name, Description, Imageurl) {
+    mainSrvc.createCollection(Name, Description, Imageurl, $rootScope.currentUser.userid);
     $scope.collection_name = '';
     $scope.collection_description = '';
     $scope.collection_imageurl = '';
-    $scope.collection_userId= '';
   }
 
   $scope.deleteCollection = function(collection){
@@ -29,5 +24,23 @@ $scope.test = 'hello world';
       });
     })
   }
+
+mainSrvc.getUserProfile(function(currentUser) {
+  console.log('FIRED', currentUser);
+  $rootScope.currentUser = currentUser;
+  mainSrvc.getUserCollections($rootScope.currentUser.userid).then(function(response){
+    $scope.user_collections = response.data;
+    console.log($scope.user_collections);
+  });
+});
+
+
+};
+$scope.refresh();
+
+
+
+
+
 
 });

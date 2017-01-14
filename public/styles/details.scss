@@ -1,0 +1,106 @@
+$primary-color: #333;
+$font-stack:    Helvetica, sans-serif;
+$background-color: rgb(243, 243, 243);
+$card-color: white;
+$red: rgb(203, 32, 45);
+$kom: 'Komoda';
+$rating: rgb(91, 168, 41);
+
+
+.rest-grid {
+  // background-color: red;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+.rest-card {
+  width: 450px;
+  height: 150px;
+  margin: 15px 0px;
+  padding: 0px 0px;
+  background-color: $card-color;
+  position: relative;
+}
+
+.rest-img {
+  height: 150px;
+  width: 150px;
+  float: left;
+  margin: 0px 0px 0px -15px;
+}
+
+.rest-info {
+  width: 220px;
+  height: 150px;
+  margin: 5px 160px;
+  padding: 0px 0px;
+}
+
+.rtitle {
+  font-size: 140%;
+  color: $red;
+}
+
+.rdetails {
+  font-size: 115%;
+}
+
+.details-rating {
+  height: 23px;
+  width: 23px;
+  background-color: $rating;
+  border-radius: 5%;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background-color: $red;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.addrest-card {
+  font-size: 115%;
+  position: relative;
+  // background-color: $background-color;
+}
+
+.rest-name {
+  color: $red;
+  font-size: 130%;
+  cursor: pointer;
+}
+
+.addrest-rating {
+  height: 23px;
+  width: 23px;
+  background-color: $rating;
+  border-radius: 5%;
+  color: white;
+  position: absolute;
+  padding: 3px 6px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-btn {
+  background-color: $rating;
+  border: none;
+  border-radius: 4%;
+  color: white;
+}

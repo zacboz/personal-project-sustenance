@@ -1,4 +1,4 @@
-angular.module('sustenance').controller('detailsCtrl', function($scope, mainSrvc, $stateParams){
+angular.module('sustenance').controller('detailsCtrl', function($scope, mainSrvc, $stateParams, $rootScope){
 
   $scope.updateCollection = function(Name, Description, Imageurl, userId) {
     console.log(userId);
@@ -18,6 +18,8 @@ angular.module('sustenance').controller('detailsCtrl', function($scope, mainSrvc
       return $scope.restaurants.businesses;
     });
   };
+
+  console.log($rootScope);
 
   mainSrvc.getRestaurantCollection($stateParams.collectionId).then(function(response){
     $scope.restaurantCollection = response.data;

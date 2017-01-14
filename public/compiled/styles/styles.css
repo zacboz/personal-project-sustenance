@@ -1,17 +1,150 @@
+p {
+  font-size: 115%; }
+
+h3 {
+  font-size: 140%; }
+
+h4 {
+  font-size: 115%; }
+
+.collections-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box; }
+
+.collection-card {
+  width: 450px;
+  height: 150px;
+  margin: 15px 0px;
+  border-radius: 20%;
+  position: relative; }
+
+.collection-image {
+  width: 150px;
+  height: 150px;
+  background-image: url("/images/kickassburger.jpg");
+  background-position: center;
+  background-size: cover; }
+
+.collection-title {
+  width: 220px;
+  height: 150px;
+  background-color: white; }
+
+.btn .btn-primary {
+  background-color: #5ba829; }
+
+.delete-btn {
+  background-color: #cb202d;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.rest-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box; }
+
+.rest-card {
+  width: 450px;
+  height: 150px;
+  margin: 15px 0px;
+  padding: 0px 0px;
+  background-color: white;
+  position: relative; }
+
+.rest-img {
+  height: 150px;
+  width: 150px;
+  float: left;
+  margin: 0px 0px 0px -15px; }
+
+.rest-info {
+  width: 220px;
+  height: 150px;
+  margin: 5px 160px;
+  padding: 0px 0px; }
+
+.rtitle {
+  font-size: 140%;
+  color: #cb202d; }
+
+.rdetails {
+  font-size: 115%; }
+
+.details-rating {
+  height: 23px;
+  width: 23px;
+  background-color: #5ba829;
+  border-radius: 5%;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer; }
+
+.remove-btn {
+  background-color: #cb202d;
+  border: none;
+  border-radius: 5%;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.addrest-card {
+  font-size: 115%;
+  position: relative; }
+
+.rest-name {
+  color: #cb202d;
+  font-size: 130%;
+  cursor: pointer; }
+
+.addrest-rating {
+  height: 23px;
+  width: 23px;
+  background-color: #5ba829;
+  border-radius: 5%;
+  color: white;
+  position: absolute;
+  padding: 3px 6px;
+  display: flex;
+  justify-content: space-around; }
+
+.add-btn {
+  background-color: #5ba829;
+  border: none;
+  border-radius: 4%;
+  color: white; }
+
 body {
   font: 100% Helvetica, sans-serif;
   color: #333;
   background-color: #f3f3f3; }
 
 .home-image {
-  height: 400px;
+  height: 450px;
   background-image: url("/images/GOURMET-STEAK.jpg");
   background-position: left center;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding-top: 80px; }
+  padding-top: 80px;
+  margin-top: -25px; }
 
 .title-border {
   height: 125px;
@@ -20,20 +153,24 @@ body {
   border-color: white;
   display: flex;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+  margin: 0 auto; }
 
 .title-text {
   font-family: 'Komoda';
   color: white;
-  font-size: 1000%; }
+  font-size: 1000%;
+  text-align: center; }
 
 .home-search {
   color: white;
-  font-size: 200%; }
+  font-size: 200%;
+  text-align: center; }
 
-#searchbar {
-  margin: 0 auto;
-  border: none; }
+.input-group {
+  text-align: center;
+  border: none;
+  outline: 0; }
 
 .btn-default {
   background-color: #cb202d;
@@ -42,24 +179,36 @@ body {
 .restaurant-row {
   height: 150px;
   width: 100%;
-  border-style: solid;
   margin: 10px 10px;
-  background-color: white; }
+  background-color: white;
+  position: relative; }
 
-img {
-  height: 144px;
+.rest-image {
+  height: 150px;
   width: 150px;
-  float: left; }
+  float: left;
+  margin: 0px 0px 0px -15px; }
+
+.rest-inner-left {
+  padding: 0px 0px 0px 0px; }
+
+.rest-inner-right {
+  padding: 0px 0px 0px 0px; }
 
 .rest-title {
   font-size: 175%;
-  color: #cb202d; }
+  color: #cb202d;
+  padding: 0px 0px 0px 0px; }
 
 .rating {
   height: 23px;
   width: 23px;
   background-color: #5ba829;
-  color: white; }
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 8px; }
 
 p {
   font-size: 115%; }
@@ -81,7 +230,9 @@ h4 {
 .collection-card {
   width: 450px;
   height: 150px;
-  margin: 15px 0px; }
+  margin: 15px 0px;
+  padding: 0px 0px;
+  border-radius: 5%; }
 
 .collection-image {
   width: 150px;
@@ -94,3 +245,30 @@ h4 {
   width: 220px;
   height: 150px;
   background-color: white; }
+
+
+.navbar.navbar-inverse {
+  background-color: #cb202d;
+  border: none; }
+
+.navbar-inverse.navbar-nav > li > a {
+  color: white; }
+
+.btn-success {
+  background-color: #cb202d;
+  border-color: #cb202d; }
+
+body {
+  background-color: #f3f3f3; }
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+  color: white;
+  font-family: 'Komoda';
+  font-size: 350%; }
+
+ul {
+  font-family: 'Komoda';
+  font-size: 300%; }
+
+footer {
+  padding: 20px 0; }

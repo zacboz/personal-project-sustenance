@@ -30,10 +30,10 @@ angular.module('sustenance').service('mainSrvc', function($http){
     });
   };
 
-  this.getUserCollections = function(){
+  this.getUserCollections = function(userId){
     return $http({
       method: 'GET',
-      url: '/sustenance/user-collections/:userId'
+      url: '/sustenance/user-collections/'+userId
     }).then(function(response){
       console.log(response);
       return response;
@@ -127,15 +127,21 @@ angular.module('sustenance').service('mainSrvc', function($http){
     });
   };
 
-  this.getAuth = function(){
+
+  var me = this;
+  this.getUserProfile = function(callback){
+    if(me.currentUser)
+      callback(me.currentUser);
     return $http({
       method: 'GET',
-      url: 'api/checkauth/'
+      url: '/sustenance/user-profile/'
     }).then(function(response){
-      console.log(response);
-      return response;
+      me.currentUser = response.data;
+      callback(me.currentUser);
     })
   }
+
+
 
 
 

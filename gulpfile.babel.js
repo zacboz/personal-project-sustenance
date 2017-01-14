@@ -3,12 +3,13 @@ import concat from 'gulp-concat'; //bundles files
 import sass from 'gulp-sass'; //sass compiling/translating
 import babel from 'gulp-babel'; //es6 translating
 import plumber from 'gulp-plumber'; //gives errors for compiling
+import sourcemaps from 'gulp-sourcemaps';
 
 const paths = {
   scssSource: './public/styles/**/*.scss',
   scssDest: './public/compiled/styles',
   jsSource: ['./public/js/app.js', './public/js/**/*.js'],
-  jsDest: '../public/compiled/js'
+  jsDest: './public/compiled/js'
 };
 
 gulp.task('styles', () => {
@@ -20,11 +21,13 @@ gulp.task('styles', () => {
 
 gulp.task('frontjs', () => {
   return gulp.src(paths.jsSource)
+  .pipe(sourcemaps.init())
   .pipe(plumber())
   .pipe(babel({
     presets: ["es2015"]
   }))
   .pipe(concat('bundle.js'))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest(paths.jsDest));
 });
 

@@ -31,7 +31,7 @@ passport.use(new FacebookStrategy({
     profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'verified']
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(profile);
+    // console.log(profile);
     var user = {
       profile: profile,
       token: accessToken
@@ -42,7 +42,7 @@ passport.use(new FacebookStrategy({
         return done(err);
       }
       var fullname = profile.name.givenName + ' ' + profile.name.familyName
-      console.log('HERE IS THE USER', user);
+      // console.log('HERE IS THE USER', user);
       var name = fullname;
       var location = profile.locale;
       var email = profile.email;
@@ -54,25 +54,26 @@ passport.use(new FacebookStrategy({
             console.log(err);
             return done(err);
           }
-          done(null, user);
+          done(null, user[0]);
         })
       } else {
-        console.log('FOUND USER');
-        done(null, user);
+        // console.log('FOUND USER');
+        done(null, user[0]);
       }
     });
   }
 ));
 
 passport.serializeUser(function(user, done) {
-    console.log('serializeUser',user);
-    done(null, user);
+    done(null, user.facebookid);
 });
 
-passport.deserializeUser(function(user, done) {
-    console.log('deserializeUser',user);
-    done(null, user);
-});
+passport.deserializeUser(function(id, done) {
+    db.get_user_by_fbid([id], function(err, user){
+      if(err) console.log('ERROR FINDING USER',err);
+      done(null, user[0]);
+    })
+  });
 
 var conn = massive.connectSync({
   connectionString : "postgres://postgres:@localhost/sustenance"
@@ -97,16 +98,17 @@ app.post('/sustenance/collections/create', isAuthenticated, collectionController
 app.put('/sustenance/collections/update', isAuthenticated, collectionController.updateCollection);
 app.delete('/sustenance/collections/:collectionId', collectionController.deleteCollection);
 app.get('/sustenance/restaurants/:collectionId', collectionController.getRestaurantCollection);
-app.post('/sustenance/restaurants/add', isAuthenticated, collectionController.addRestaurant);
+app.post('/sustenance/restaurants/add', collectionController.addRestaurant);
 app.delete('/sustenance/restaurants/:restaurantId', isAuthenticated, collectionController.removeRestaurant);
 app.get('/sustenance/user-profile/', isAuthenticated, collectionController.getUserProfile);
+
 
 
 app.get('/sustenance/location/:location', yelpController.GetSearchLocation);
 app.get('/sustenance/term/:term/:location', yelpController.GetSearchTerm);
 app.get('/sustenance/business', yelpController.GetYelpBusiness);
 app.post('/auth/facebook', passport.authenticate('facebook'));
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/#/', failureRedirect: '/#/login' }));
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/#/collections', failureRedirect: '/#/login' }));
 
 
 
