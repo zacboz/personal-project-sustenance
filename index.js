@@ -95,11 +95,11 @@ function isAuthenticated(req, res, next) {
 app.get('/sustenance/public-collections', collectionController.getPublicCollections);
 app.get('/sustenance/user-collections/:userId', isAuthenticated, collectionController.getUserCollections);
 app.post('/sustenance/collections/create', isAuthenticated, collectionController.createCollection);
-app.put('/sustenance/collections/update', isAuthenticated, collectionController.updateCollection);
+app.put('/sustenance/collections/update/:collectionId', isAuthenticated, collectionController.updateCollection);
 app.delete('/sustenance/collections/:collectionId', collectionController.deleteCollection);
 app.get('/sustenance/restaurants/:collectionId', collectionController.getRestaurantCollection);
 app.post('/sustenance/restaurants/add', collectionController.addRestaurant);
-app.delete('/sustenance/restaurants/:restaurantId', isAuthenticated, collectionController.removeRestaurant);
+app.delete('/sustenance/restaurants/:restaurantId', collectionController.removeRestaurant);
 app.get('/sustenance/user-profile/', isAuthenticated, collectionController.getUserProfile);
 
 
@@ -109,10 +109,6 @@ app.get('/sustenance/term/:term/:location', yelpController.GetSearchTerm);
 app.get('/sustenance/business', yelpController.GetYelpBusiness);
 app.post('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/#/collections', failureRedirect: '/#/login' }));
-
-
-
-
 
 
 

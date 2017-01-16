@@ -7,6 +7,10 @@ h3 {
 h4 {
   font-size: 115%; }
 
+.col-img {
+  width: 150px;
+  height: 150px; }
+
 .collections-grid {
   display: flex;
   justify-content: space-between;
@@ -22,20 +26,18 @@ h4 {
   border-radius: 20%;
   position: relative; }
 
-.collection-image {
-  width: 150px;
-  height: 150px;
-  background-image: url("/images/kickassburger.jpg");
-  background-position: center;
-  background-size: cover; }
-
 .collection-title {
   width: 220px;
   height: 150px;
   background-color: white; }
 
-.btn .btn-primary {
-  background-color: #5ba829; }
+.btn-primary {
+  background-color: #018c38;
+  border: none; }
+
+.btn-primary:hover {
+  background-color: #018c38;
+  border: none; }
 
 .delete-btn {
   background-color: #cb202d;
@@ -176,6 +178,10 @@ body {
   background-color: #cb202d;
   color: white; }
 
+.btn-default:hover {
+  background-color: #cb202d;
+  color: white; }
+
 .restaurant-row {
   height: 150px;
   width: 100%;
@@ -251,10 +257,41 @@ h4 {
   background-color: #cb202d;
   border: none; }
 
-.navbar-inverse.navbar-nav > li > a {
+.navbar-inverse .navbar-nav > li > a {
   color: white; }
 
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  background-color: #cb202d !important;
+  color: white; }
+
+.navebar-inverse .navbar-nav > .active > a {
+  background-color: #cb202d !important;
+  color: white; }
+
+.navebar-inverse .navbar-nav > .active > a:focus {
+  background-color: #cb202d;
+  color: white; }
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background-color: #cb202d;
+  color: white; }
+
+.navbar-inverse .navbar-toggle {
+  border-color: #cb202d; }
+
 .btn-success {
+  background-color: #cb202d;
+  border-color: #cb202d; }
+
+.btn-success:hover {
+  background-color: #cb202d;
+  border-color: #cb202d; }
+
+.btn-success:focus {
+  background-color: #cb202d;
+  border-color: #cb202d; }
+
+.btn-success:active {
   background-color: #cb202d;
   border-color: #cb202d; }
 

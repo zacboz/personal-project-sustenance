@@ -7,16 +7,54 @@ $red: rgb(203, 32, 45);
     border: none;
 }
 
-.navbar-inverse.navbar-nav>li>a {
+.navbar-inverse .navbar-nav>li>a {
   color: white;
 }
 
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: $red !important;
+    color: white;
+}
+.navebar-inverse .navbar-nav>.active>a {
+  background-color: $red !important;
+  color: white;
+}
+
+.navebar-inverse .navbar-nav>.active>a:focus{
+  background-color: $red;
+  color: white;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover {
+  background-color: $red;
+  color: white;
+}
+
+
+
+.navbar-inverse .navbar-toggle {
+  border-color: $red;
+}
+
 .btn-success {
-  // border: none;
   background-color: $red;
   border-color: $red;
 }
 
+.btn-success:hover {
+  background-color: $red;
+  border-color: $red;
+}
+
+.btn-success:focus {
+  background-color: $red;
+  border-color: $red;
+}
+
+.btn-success:active {
+  background-color: $red;
+  border-color: $red;
+}
 .form {
   // border: none;
 }

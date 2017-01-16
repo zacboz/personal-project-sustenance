@@ -17,22 +17,27 @@ $scope.refresh = function(){
   }
 
   $scope.deleteCollection = function(collection){
-    console.log(collection);
+    console.log('CONTROL', collection);
     mainSrvc.deleteCollection(collection).then(function(){
       mainSrvc.getPublicCollections().then(function(response){
         $scope.public_collections = response.data;
+        console.log('public', response.data);
       });
-    })
+      mainSrvc.getUserCollections($rootScope.currentUser.userid).then(function(response){
+        $scope.user_collections = response.data;
+        console.log($scope.user_collections);
+      });
+    });
   }
 
-mainSrvc.getUserProfile(function(currentUser) {
-  console.log('FIRED', currentUser);
-  $rootScope.currentUser = currentUser;
-  mainSrvc.getUserCollections($rootScope.currentUser.userid).then(function(response){
-    $scope.user_collections = response.data;
-    console.log($scope.user_collections);
+  mainSrvc.getUserProfile(function(currentUser) {
+    // console.log('FIRED', currentUser);
+    $rootScope.currentUser = currentUser;
+    mainSrvc.getUserCollections($rootScope.currentUser.userid).then(function(response){
+      $scope.user_collections = response.data;
+      // console.log($scope.user_collections);
+    });
   });
-});
 
 
 };

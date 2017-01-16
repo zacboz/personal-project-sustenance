@@ -42,14 +42,14 @@
 </div>
 
 
-    <h2>User Collections:</h2>
+    <h2>My Collections:</h2>
 
     <div class='container'>
       <div class='row'>
         <div class='col-xs-12 collections-grid'>
 
           <div class="collection-card col-xs-4" ng-repeat='collection in user_collections'>
-            <div class='collection-image col-xs-1'><span class='rest-image'><img ng-src='{{collection.imageurl}}'></span>
+            <div class='collection-image col-xs-1'><span class='col-img'><img ng-src='{{collection.imageurl}}'></span>
             </div>
             <span class='collection-title col-xs-3'>
               <h3 ui-sref='details({collectionId: collection.id})'><strong>{{collection.name}}</strong></h3>

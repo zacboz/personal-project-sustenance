@@ -1,16 +1,16 @@
-var login = {
-   security: (mainService, $state) => {
-     return mainService.getAuth()
-       .catch((err) => {
-         console.log(err);
-         if(err.status === 401){
-           $state.go("login");s
-         } else if (err.status === 403){
-           $state.go("home");
-         }
-       })
-   }
- }
+// var login = {
+//    security: (mainService, $state) => {
+//      return mainService.getAuth()
+//        .catch((err) => {
+//          console.log(err);
+//          if(err.status === 401){
+//            $state.go("login");s
+//          } else if (err.status === 403){
+//            $state.go("home");
+//          }
+//        })
+//    }
+//  }
 
 angular.module('sustenance', ['ui.router'])
     .config(function( $stateProvider, $urlRouterProvider){

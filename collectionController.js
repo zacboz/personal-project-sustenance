@@ -17,7 +17,7 @@ getUserProfile: function(req, res) {
 getUserCollections: function(req, res) {
   // console.log('||||||||||||||||||',req.user);
   db.read_personalCollections([req.user.userid], function(err, response){
-    console.log('getting user collection', response);
+    // console.log('getting user collection', response);
     res.status(200).json(response);
   });
 },
@@ -32,7 +32,6 @@ createCollection: function(req, res) {
       console.log(err);
       res.json(err);
     } else {
-      console.log(response);
       res.json(response);
     }
   });
@@ -40,15 +39,16 @@ createCollection: function(req, res) {
 
 updateCollection: function(req, res) {
   var collection = req.body;
-  // console.log(collection);
-  var value = [req.params.Id, collection.Id];
+  var collectionId = req.params.collectionId;
+  console.log(collection);
+  var values = [collectionId, collection.Name, collection.Description, collection.Imageurl, collection.userId];
   db.update_collection(values, function(err, response) {
+    console.log('updating collection');
     if (err) {
       console.log(err);
       res.status(200).json(err);
     } else {
-      console.log(response);
-      console.log('updating');
+      console.log('updating', response);
       res.status(200).json(response);
     }
   });
@@ -57,7 +57,7 @@ updateCollection: function(req, res) {
 deleteCollection: function(req, res) {
   var record = req.params;
   var recordId = record.collectionId;
-  console.log(recordId);
+  console.log('delete this', recordId);
   if (recordId) {
     db.delete_restaurantCollection([recordId], function(err, response){
       if (err){
@@ -68,13 +68,13 @@ deleteCollection: function(req, res) {
           console.log('deleting collection', response);
           res.status(200).json(response);
         })
+
     });
   }
 },
 
 getRestaurantCollection: function(req, res) {
   db.read_restaurantsInCollection(req.params.collectionId, function(err, response){
-    console.log(response);
     res.status(200).json(response);
   });
 },
@@ -86,9 +86,7 @@ addRestaurant: function(req, res) {
     if(err){
       console.log(err);
     }
-    console.log('adding restaurant', response);
     db.add_restaurantCollection([response[0].id, req.body.collectionId], function(err, response) {
-      console.log('tie restaurant to collection');
       res.status(200).json(response);
     });
   });
@@ -114,9 +112,7 @@ removeRestaurant: function(req, res) {
   }
 },
 
-getUser: function(req, res) {
 
-}
 
 
 

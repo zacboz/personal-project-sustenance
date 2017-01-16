@@ -1,13 +1,13 @@
 angular.module('sustenance').controller('detailsCtrl', function($scope, mainSrvc, $stateParams, $rootScope){
 
-  $scope.updateCollection = function(Name, Description, Imageurl, userId) {
-    console.log(userId);
-    mainSrvc.updateCollection(Name, Description, Imageurl, userId);
+  $scope.updateCollection = function(Name, Description, Imageurl) {
+    mainSrvc.updateCollection($stateParams.collectionId, Name, Description, Imageurl, $rootScope.currentUser.userid);
     $scope.collection_name = '';
     $scope.collection_description = '';
     $scope.collection_imageurl = '';
-    $scope.collection_userId= '';
+    console.log($rootScope.currentUser.userid);
   }
+
 
   $scope.searchTerm = function(term, location) {
     console.log(location);

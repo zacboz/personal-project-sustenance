@@ -25,7 +25,6 @@ angular.module('sustenance').service('mainSrvc', function($http){
       method: 'GET',
       url: '/sustenance/public-collections'
     }).then(function(response){
-      console.log(response);
       return response;
     });
   };
@@ -57,26 +56,28 @@ angular.module('sustenance').service('mainSrvc', function($http){
     });
   };
 
-  this.updateCollection = function(Name, Description, Imageurl, userId){
+  this.updateCollection = function(Id, Name, Description, Imageurl, userId){
     var collection = {
       Name: Name,
       Description: Description,
       Imageurl: Imageurl,
       userId: userId
     }
+    console.log(collection);
     return $http({
       method: 'PUT',
-      url: '/sustenance/collections/update',
+      url: '/sustenance/collections/update/'+Id,
       data: collection
     }).success(function(response){
-      console.log(response);
+      console.log('SERVICE', response);
       return response;
     });
   };
 
   this.deleteCollection = function(collection) {
-    console.log(collection);
+    console.log('SERVICE', collection);
     var collectionId = collection.id;
+    console.log(collectionId);
     return $http({
       method: 'DELETE',
       url: '/sustenance/collections/'+collectionId
