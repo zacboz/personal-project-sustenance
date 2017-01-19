@@ -1,39 +1,57 @@
 $background-color: rgb(243, 243, 243);
 $kom: 'Komoda';
 $red: rgb(203, 32, 45);
+$font-stack:    'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+$green: rgb(1, 140, 56);
 
-.navbar.navbar-inverse {
-    background-color: $red;
+
+// .navbar.transparent.navbar-inverse .navbar-inner {
+//    background: rgba(0,0,0,0.4);
+// }
+
+.navbar.transparent.navbar-inverse.navbar-fixed-top {
+    // background-color: $red;
+    background: none;
     border: none;
 }
 
 .navbar-inverse .navbar-nav>li>a {
   color: white;
+  background: none;
+  border: none;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    background-color: $red !important;
+.navbar-inverse .transparent .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    // background-color: $red !important;
     color: white;
+    background: none;
+    border: none;
 }
-.navebar-inverse .navbar-nav>.active>a {
-  background-color: $red !important;
+.navebar-inverse .transparent .navbar-nav>.active>a {
+  // background-color: $red !important;
   color: white;
+  background: none;
+  border: none;
 }
 
-.navebar-inverse .navbar-nav>.active>a:focus{
-  background-color: $red;
+.navebar-inverse .transparent .navbar-nav>.active>a:focus{
+  // background-color: $red;
   color: white;
+  background: none;
+  border: none;
 }
 
-.navbar-inverse .navbar-nav>.active>a:hover {
-  background-color: $red;
+.navbar-inverse .transparent .navbar-nav>.active>a:hover {
+  // background-color: $red;
   color: white;
+  background: none;
+  border: none;
 }
 
 
 
 .navbar-inverse .navbar-toggle {
-  border-color: $red;
+  // border-color: $red;
 }
 
 .btn-success {
@@ -65,14 +83,42 @@ body {
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
     color: white;
-    font-family: 'Komoda';
-    font-size: 350%;
+    font-family: 'Josefin Slab', serif;
+    font-size: 20px;
     // background-color: $red;
 }
 
 ul {
-  font-family: 'Komoda';
-  font-size: 300%;
+  font-family: 'Josefin Slab', serif;
+  font-size: 20px;
+}
+
+.login-event {
+  height: 30px;
+  width: 70px;
+  background-color: $green;
+  border-radius: 4px;
+  color: white;
+  font-family: $font-stack;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 7px;
+}
+
+.logout-event {
+  height: 30px;
+  width: 70px;
+  background-color: $green;
+  border-radius: 4px;
+  color: white;
+  font-family: $font-stack;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 7px;
 }
 
 footer {

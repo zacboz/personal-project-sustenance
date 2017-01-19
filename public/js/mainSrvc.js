@@ -142,6 +142,15 @@ angular.module('sustenance').service('mainSrvc', function($http){
     })
   }
 
+  this.getLogout = function(){
+    return $http({
+      method: 'GET',
+      url: '/logout'
+    }).then(function(response){
+      console.log('service firing', response);
+    })
+  };
+
 
 
 

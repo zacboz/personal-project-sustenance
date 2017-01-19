@@ -7,29 +7,23 @@ h3 {
 h4 {
   font-size: 115%; }
 
-.col-img {
-  width: 150px;
-  height: 150px; }
-
-.collections-grid {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  box-sizing: border-box; }
-
-.collection-card {
-  width: 450px;
+.col-header-img {
   height: 150px;
-  margin: 15px 0px;
-  border-radius: 20%;
-  position: relative; }
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/xobyibymx20-elli-o.jpg");
+  background-position: left center;
+  background-size: cover;
+  margin-top: -75px; }
 
-.collection-title {
-  width: 220px;
-  height: 150px;
-  background-color: white; }
+.create-btn {
+  margin: 95px 0px 0px 0px;
+  float: right; }
+
+.modal-title {
+  font-size: 20px; }
+
+.control-label {
+  font-size: 15px;
+  margin: 6px 6px 0px 0px; }
 
 .btn-primary {
   background-color: #018c38;
@@ -38,6 +32,16 @@ h4 {
 .btn-primary:hover {
   background-color: #018c38;
   border: none; }
+
+.btn-primary:active {
+  background-color: #018c38;
+  border: none;
+  border-color: #018c38; }
+
+.btn-primary:focus {
+  background-color: #018c38;
+  border: none;
+  border-color: #018c38; }
 
 .delete-btn {
   background-color: #cb202d;
@@ -133,35 +137,35 @@ h4 {
   color: white; }
 
 body {
-  font: 100% Helvetica, sans-serif;
+  font: 100% "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   background-color: #f3f3f3; }
 
 .home-image {
-  height: 450px;
-  background-image: url("/images/GOURMET-STEAK.jpg");
+  height: 400px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/pizza3 (1).jpg");
   background-position: left center;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding-top: 80px;
-  margin-top: -25px; }
+  margin-top: -75px; }
 
 .title-border {
-  height: 125px;
-  width: 240px;
-  border-style: solid;
-  border-color: white;
+  height: 90px;
+  width: 195px;
+  background-color: #cb202d;
+  border-radius: 4px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto; }
 
 .title-text {
-  font-family: 'Komoda';
+  font-family: 'Josefin Slab', serif;
   color: white;
-  font-size: 1000%;
+  font-size: 40px;
   text-align: center; }
 
 .home-search {
@@ -169,16 +173,46 @@ body {
   font-size: 200%;
   text-align: center; }
 
-.input-group {
+.form-group {
   text-align: center;
   border: none;
-  outline: 0; }
+  outline: 0;
+  display: flex;
+  justify-content: space-around; }
+
+.form-control {
+  border: none; }
+
+.btn:active:focus {
+  outline: none; }
+
+.btn:focus {
+  outline: none; }
 
 .btn-default {
   background-color: #cb202d;
-  color: white; }
+  color: white;
+  border: none;
+  margin: 0px 20px;
+  height: 34px; }
 
 .btn-default:hover {
+  background-color: #cb202d;
+  color: white; }
+
+.btn-default:active {
+  background-color: #cb202d;
+  color: white; }
+
+.btn-default:focus {
+  background-color: #cb202d;
+  color: white; }
+
+.btn-default:active:focus {
+  background-color: #cb202d;
+  color: white; }
+
+.btn-default:active:hover {
   background-color: #cb202d;
   color: white; }
 
@@ -187,24 +221,30 @@ body {
   width: 100%;
   margin: 10px 10px;
   background-color: white;
-  position: relative; }
+  position: relative;
+  border-radius: 4px; }
 
 .rest-image {
   height: 150px;
-  width: 150px;
+  width: 170px;
   float: left;
-  margin: 0px 0px 0px -15px; }
+  margin: 0px 0px 0px -15px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px; }
 
 .rest-inner-left {
-  padding: 0px 0px 0px 0px; }
+  padding: 10px 0px 0px 15px;
+  margin: 0px, 0px, 0px, 0px; }
 
 .rest-inner-right {
-  padding: 0px 0px 0px 0px; }
+  padding: 15px 0px 0px 5px;
+  margin: 0px, 0px, 0px, 0px; }
 
 .rest-title {
   font-size: 175%;
   color: #cb202d;
-  padding: 0px 0px 0px 0px; }
+  padding: 0px 0px 0px 0px;
+  float: left; }
 
 .rating {
   height: 23px;
@@ -214,10 +254,12 @@ body {
   cursor: pointer;
   display: flex;
   justify-content: space-around;
-  padding: 4px 8px; }
+  padding: 4px 8px;
+  float: left; }
 
 p {
-  font-size: 115%; }
+  font-size: 17px;
+  clear: both; }
 
 h3 {
   font-size: 140%; }
@@ -225,59 +267,85 @@ h3 {
 h4 {
   font-size: 115%; }
 
+.title-header {
+  margin-top: 50px;
+  font-size: 25px; }
+
+.title-desc {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 135%;
+  color: #89959B;
+  line-height: 1.2em; }
+
 .collections-grid {
+  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0px -22px; }
 
 .collection-card {
-  width: 450px;
+  width: 360px;
   height: 150px;
-  margin: 15px 0px;
+  margin: 10px 5px;
   padding: 0px 0px;
-  border-radius: 5%; }
+  border-radius: 4px; }
+
+.card-container {
+  display: flex; }
 
 .collection-image {
-  width: 150px;
-  height: 150px;
-  background-image: url("/images/kickassburger.jpg");
-  background-position: center;
-  background-size: cover; }
+  width: 40%;
+  height: 140px;
+  padding: 0 0; }
+
+.col-img {
+  width: 100%;
+  height: 140px;
+  padding: 0 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px; }
 
 .collection-title {
-  width: 220px;
-  height: 150px;
-  background-color: white; }
+  width: 60%;
+  height: 140px;
+  background-color: white;
+  padding: 0 5;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px; }
 
 
-.navbar.navbar-inverse {
-  background-color: #cb202d;
+.navbar.transparent.navbar-inverse.navbar-fixed-top {
+  background: none;
   border: none; }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: white; }
+  color: white;
+  background: none;
+  border: none; }
 
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-  background-color: #cb202d !important;
-  color: white; }
+.navbar-inverse .transparent .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+  color: white;
+  background: none;
+  border: none; }
 
-.navebar-inverse .navbar-nav > .active > a {
-  background-color: #cb202d !important;
-  color: white; }
+.navebar-inverse .transparent .navbar-nav > .active > a {
+  color: white;
+  background: none;
+  border: none; }
 
-.navebar-inverse .navbar-nav > .active > a:focus {
-  background-color: #cb202d;
-  color: white; }
+.navebar-inverse .transparent .navbar-nav > .active > a:focus {
+  color: white;
+  background: none;
+  border: none; }
 
-.navbar-inverse .navbar-nav > .active > a:hover {
-  background-color: #cb202d;
-  color: white; }
-
-.navbar-inverse .navbar-toggle {
-  border-color: #cb202d; }
+.navbar-inverse .transparent .navbar-nav > .active > a:hover {
+  color: white;
+  background: none;
+  border: none; }
 
 .btn-success {
   background-color: #cb202d;
@@ -300,12 +368,38 @@ body {
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
   color: white;
-  font-family: 'Komoda';
-  font-size: 350%; }
+  font-family: 'Josefin Slab', serif;
+  font-size: 20px; }
 
 ul {
-  font-family: 'Komoda';
-  font-size: 300%; }
+  font-family: 'Josefin Slab', serif;
+  font-size: 20px; }
+
+.login-event {
+  height: 30px;
+  width: 70px;
+  background-color: #018c38;
+  border-radius: 4px;
+  color: white;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 7px; }
+
+.logout-event {
+  height: 30px;
+  width: 70px;
+  background-color: #018c38;
+  border-radius: 4px;
+  color: white;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 7px; }
 
 footer {
   padding: 20px 0; }

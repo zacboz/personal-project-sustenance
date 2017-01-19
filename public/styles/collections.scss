@@ -15,43 +15,71 @@ h4 {
   font-size: 115%;
 }
 
-.col-img {
-  width: 150px;
+.col-header-img {
   height: 150px;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('/images/xobyibymx20-elli-o.jpg');
+  background-position: left center;
+  background-size: cover;
+  margin-top: -75px;
 }
 
-
-.collections-grid {
-  // background-color: red;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  box-sizing: border-box;
+.create-btn {
+  margin: 95px 0px 0px 0px;
+  float: right;
 }
 
-.collection-card {
-  width: 450px;
-  height: 150px;
-  margin: 15px 0px;
-  border-radius: 20%;
-  position: relative;
+.modal-title {
+  font-size: 20px;
 }
+
+.control-label {
+  font-size: 15px;
+  margin: 6px 6px 0px 0px;
+}
+
+// .col-img {
+//   width: 150px;
+//   height: 150px;
+// }
+
+
+// .collections-grid {
+//   // background-color: red;
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   align-content: center;
+//   box-sizing: border-box;
+// }
+
+// // .collection-card {
+// //   width: 450px;
+// //   height: 150px;
+// //   margin: 15px 0px;
+// //   border-radius: 20%;
+// //   position: relative;
+// }
 
 // .collection-image {
 //   width: 150px;
 //   height: 150px;
-//   background-image: url("/images/kickassburger.jpg");
-//   background-position: center;
-//   background-size: cover;
+//   // background-image: url("/images/kickassburger.jpg");
+//   // background-position: center;
+//   // background-size: cover;
 // }
-
-.collection-title {
-  width: 220px;
-  height: 150px;
-  background-color: $card-color;
-}
+//
+// .col-img {
+//   width: 150px;
+//   height: 150px;
+//   margin: 0px 0px 0px -15px;
+// }
+//
+// .collection-title {
+//   width: 220px;
+//   height: 150px;
+//   background-color: $card-color;
+// }
 
 .btn-primary {
   background-color: $green;
@@ -61,6 +89,16 @@ h4 {
 .btn-primary:hover {
   background-color: $green;
   border: none;
+}
+.btn-primary:active {
+  background-color: $green;
+  border: none;
+  border-color: $green;
+}
+.btn-primary:focus {
+  background-color: $green;
+  border: none;
+  border-color: $green;
 }
 
 .delete-btn {

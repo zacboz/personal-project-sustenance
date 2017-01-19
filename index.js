@@ -109,7 +109,10 @@ app.get('/sustenance/term/:term/:location', yelpController.GetSearchTerm);
 app.get('/sustenance/business', yelpController.GetYelpBusiness);
 app.post('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/#/collections', failureRedirect: '/#/login' }));
-
+app.get('/logout', function(req, res){
+  req.logout();
+  res.status(200).end();
+});
 
 
 app.listen(3000, function() {

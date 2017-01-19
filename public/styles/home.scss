@@ -1,34 +1,39 @@
 $primary-color: #333;
-$font-stack:    Helvetica, sans-serif;
+$font-stack:    'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
 $background-color: rgb(243, 243, 243);
 $card-color: white;
 $red: rgb(203, 32, 45);
 $kom: 'Komoda';
 $rating: rgb(91, 168, 41);
+$pap: 'Papyrus Regular';
+$green: rgb(1, 140, 56);
 
 body {
   font: 100% $font-stack;
   color: $primary-color;
   background-color: $background-color;
+  // margin: 0px 0px 0px 0px;
 }
 
 .home-image {
-  height: 450px;
-  background-image: url('/images/GOURMET-STEAK.jpg');
+  height: 400px;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('/images/pizza3 (1).jpg');
   background-position: left center;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding-top: 80px;
-  margin-top: -25px;
+  margin-top: -75px;
 }
 
 .title-border {
-  height: 125px;
-  width: 240px;
-  border-style: solid;
-  border-color: white;
+  height: 90px;
+  width: 195px;
+  background-color: $red;
+  border-radius: 4px;
+  // border-style: solid;
+  // border-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -37,9 +42,9 @@ body {
 
 
 .title-text {
-  font-family: 'Komoda';
+  font-family: 'Josefin Slab', serif;
   color: white;
-  font-size: 1000%;
+  font-size: 40px;
   text-align: center;
 }
 
@@ -49,20 +54,55 @@ body {
   text-align: center;
 }
 
-.input-group {
+.form-group {
   text-align: center;
   border: none;
   outline: 0;
+  display: flex;
+  justify-content: space-around;
   // margin: 0 auto;
   // float: none;
+}
+
+.form-control {
+  border: none;
+  // display: flex;
+  // justify-content: space-around;
+}
+
+.btn:active:focus {
+  outline: none;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .btn-default {
   background-color: $red;
   color: white;
+  border: none;
+  margin: 0px 20px;
+  height: 34px;
 }
 
 .btn-default:hover {
+  background-color: $red;
+  color: white;
+}
+.btn-default:active {
+  background-color: $red;
+  color: white;
+}
+.btn-default:focus {
+  background-color: $red;
+  color: white;
+}
+.btn-default:active:focus {
+  background-color: $red;
+  color: white;
+}
+.btn-default:active:hover {
   background-color: $red;
   color: white;
 }
@@ -73,27 +113,33 @@ body {
   margin: 10px 10px;
   background-color: $card-color;
   position: relative;
+  border-radius: 4px;
 }
 
 .rest-image {
   height: 150px;
-  width: 150px;
+  width: 170px;
   float: left;
   margin: 0px 0px 0px -15px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 .rest-inner-left {
-  padding: 0px 0px 0px 0px;
+  padding: 10px 0px 0px 15px;
+  margin: 0px, 0px, 0px, 0px;
 }
 
 .rest-inner-right {
-  padding: 0px 0px 0px 0px;
+  padding: 15px 0px 0px 5px;
+  margin: 0px, 0px, 0px, 0px;
 }
 
 .rest-title {
   font-size: 175%;
   color: $red;
   padding: 0px 0px 0px 0px;
+  float: left;
 }
 
 .rating {
@@ -105,10 +151,13 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 4px 8px;
+  float: left;
+
 }
 
 p {
-  font-size: 115%;
+  font-size: 17px;
+  clear: both;
 }
 
 h3 {
@@ -119,34 +168,70 @@ h4 {
   font-size: 115%;
 }
 
+.title-header {
+  margin-top: 50px;
+  font-size: 25px;
+}
+
+.title-desc {
+  font-family: $font-stack;
+  font-weight: 400;
+  font-size: 135%;
+  color: #89959B;
+  line-height: 1.2em;
+}
+
 .collections-grid {
-  // background-color: red;
+  width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
+  // align-items: center;
+  // align-content: center;
   box-sizing: border-box;
+  margin: 0px -22px;
 }
 
 .collection-card {
-  width: 450px;
+  width: 360px;
   height: 150px;
-  margin: 15px 0px;
+  margin: 10px 5px;
   padding: 0px 0px;
-  border-radius: 5%;
+  border-radius: 4px;
+}
+
+.card-container {
+  display: flex;
 }
 
 .collection-image {
-  width: 150px;
-  height: 150px;
-  background-image: url("/images/kickassburger.jpg");
-  background-position: center;
-  background-size: cover;
+  width: 40%;
+  height: 140px;
+  padding: 0 0;
+  // background-image: url("/images/kickassburger.jpg");
+  // background-position: center;
+  // background-size: cover;
 }
 
+.col-img {
+  width: 100%;
+  height: 140px;
+  padding: 0 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  // margin: 0px 0px 0px -15px;
+}
+
+
 .collection-title {
-  width: 220px;
-  height: 150px;
+  width: 60%;
+  height: 140px;
   background-color: $card-color;
+  padding: 0 5;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  // border-radius: 4px;
+
 }

@@ -42,4 +42,15 @@ angular.module('sustenance').controller('detailsCtrl', function($scope, mainSrvc
       });
     });
   };
+
+  if(!$rootScope.currentUser) {
+    mainSrvc.getUserProfile(function(currentUser) {
+      // console.log('FIRED', currentUser);
+      $rootScope.currentUser = currentUser;
+      mainSrvc.getUserCollections($rootScope.currentUser.userid).then(function(response){
+        $scope.user_collections = response.data;
+        // console.log($scope.user_collections);
+      });
+    });
+  }
 });

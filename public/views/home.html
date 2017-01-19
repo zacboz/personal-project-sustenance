@@ -4,18 +4,17 @@
 <div class='container'>
     <div class='row'>
       <div class='title-border'>
-        <h1 class='title-text'>Sustenance</h1>
+        <h1 class='title-text'>sustenance</h1>
       </div>
       <div class="searchbar col-xs-2"></div>
       <div class="searchbar col-xs-8">
-        <h2 class='home-search'>Find the best restaurants, cafes, and bars in every City</h2>
-      <div class="input-group">
-        <span class="input-group-addon" id="sizing-addon1">Location:</span>
-        <input ng-model='location' maxlength="80" type="text" class="form-control" id='searchbar' placeholder="address, neighborhood, city, state or zip">
-        <span class="input-group-btn">
+        <h2 class='home-search'>Find the best restaurants, cafes, and pubs in every city</h2>
+      <div class="form-group">
+        <input ng-model='location' maxlength="80" type="text" class="form-control" id='searchbar' placeholder="Location: address, neighborhood, city, state or zip">
+        <span class="search-btn">
           <button class="btn btn-default" type="button" ng-click='searchLocation(location)'>Search</button>
         </span>
-      </div><!-- /input-group -->
+      </div><!-- /form-group -->
     </div><!-- /.col-lg-6 -->
     <div class="searchbar col-xs-2"></div>
 
@@ -32,17 +31,20 @@
             <span><img class='rest-image' ng-src='{{restaurant.image_url}}'></span>
 
             <div class="rest-inner-left col-xs-6">
+              <div>
               <a class='rest-title' href='{{restaurant.url}}'> {{restaurant.name}}</a>
 
-                <div class='rating'>{{restaurant.rating}}</div>
+                <span class='rating'>{{restaurant.rating}}</span>
+              </div>
+
                 <p>Price: {{restaurant.price}} </p>
-                <p>Type: {{restaurant.categories}}</p>
+                <p>Type: <span ng-repeat='category in restaurant.categories'>{{category.title}}<span ng-hide='$last'>, </span></span></p>
             </div>
 
             <div class="rest-inner-right col-xs-4">
               <p>{{restaurant.location.city}}</p>
               <p>{{restaurant.display_phone}}</p>
-              <p>{{restaurant.location.display_address}}</p>
+              <p>{{restaurant.location.display_address[0]}} {{restaurant.location.display_address[1] }}</p>
             </div>
           </div>
         </div>
@@ -51,17 +53,19 @@
 
       <div class='container'>
         <div class='row'>
-          <h2><strong>Collections</strong></h2>
-          <p>Explore curated lists of top restuarants in your area</p>
+          <h2 class=title-header><strong>Collections</strong></h2>
+          <p class='title-desc'>Explore curated lists of top restuarants, cafes, pubs, and bars in your area</p>
           <div class='col-xs-12 collections-grid'>
               <div class='collection-card col-xs-4' ng-repeat='collection in collections'>
-                <div class='collection-image col-xs-1'><span class='rest-image'><img ng-src='{{collection.imageurl}}'></span>
+                <div class='card-container'>
+                <div class='collection-image col-xs-1'><span><img class='col-img' ng-src='{{collection.imageurl}}'></span>
                 </div>
                 <span class='collection-title col-xs-3'>
                   <h3 ui-sref='details({collectionId: collection.id})'><strong>{{collection.name}}</strong></h3>
                   <h4>{{collection.description}}</h4>
                 </span>
               </div>
+            </div>
           </div>
         </div>
       </div>
