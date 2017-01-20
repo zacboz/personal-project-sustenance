@@ -20,8 +20,9 @@ CREATE TABLE restaurants (
   image_url TEXT,
   name VARCHAR(30),
   rating VARCHAR(5),
-  categories TEXT,
-  price TEXT
+  categories TEXT[],
+  price TEXT,
+  city VARCHAR(50)
 );
 
 CREATE TABLE restaurantCollection (

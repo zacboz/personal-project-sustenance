@@ -81,7 +81,7 @@ getRestaurantCollection: function(req, res) {
 
 addRestaurant: function(req, res) {
   var restaurant = req.body.restaurant;
-  var values = [restaurant.image_url, restaurant.name, String(restaurant.rating), restaurant.categories, restaurant.price];
+  var values = [restaurant.image_url, restaurant.name, String(restaurant.rating), restaurant.categories, restaurant.price, restaurant.location.city];
   db.add_restaurant(values, function(err, response) {
     if(err){
       console.log(err);

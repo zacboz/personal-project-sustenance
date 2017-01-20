@@ -28,7 +28,7 @@ angular.module('sustenance').controller('detailsCtrl', function($scope, mainSrvc
 
   $scope.addRestaurant = function(restaurant){
     mainSrvc.addRestaurant(restaurant, $stateParams.collectionId).then(function(response){
-      console.log(response);
+      console.log('31', response);
       $scope.add = response.body;
     });
   };

@@ -109,6 +109,11 @@ angular.module('sustenance').service('mainSrvc', function($http){
       method: 'GET',
       url: '/sustenance/restaurants/'+collectionId
     }).then(function(response){
+      for (var i = 0; i < response.data.length; i++) {
+        for (var j = 0; j < response.data[i].categories.length; j++) {
+          response.data[i].categories[j] = JSON.parse(response.data[i].categories[j]);
+        }
+      }
       console.log(response);
       return response;
     });
