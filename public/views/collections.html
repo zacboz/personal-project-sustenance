@@ -45,13 +45,12 @@
 </div>
 
 
-    <h2 class='title-header'>My Collections:</h2>
-    <p class='title-desc'>Create and browse lists of the finest restaurants</p>
 
     <div class='container'>
-      <div class='row'>
+      <div class='row col-container'>
+        <h2 class='title-header'>My Collections:</h2>
+        <p class='title-desc'>Create and browse lists of the finest restaurants</p>
         <div class='col-xs-12 collections-grid'>
-
           <div class="collection-card col-xs-4" ng-repeat='collection in user_collections'>
             <div class='collection-image col-xs-1'><span><img class='col-img' ng-src='{{collection.imageurl}}'></span>
             </div>
@@ -67,20 +66,19 @@
     </div>
 
 
-    <h2 class='title-header'>Public Collections:</h2>
-    <p class='title-desc'>Explore curated lists of top restuarants, cafes, pubs, and bars in your area</p>
-
+    
     <div class='container'>
-      <div class='row'>
+      <div class='row col-container'>
+        <h2 class='title-header'>Public Collections:</h2>
+        <p class='title-desc'>Explore curated lists of top restuarants, cafes, pubs, and bars in your area</p>
         <div class='col-xs-12 collections-grid'>
-
           <div class="collection-card col-xs-4" ng-repeat='collection in public_collections'>
             <div class='collection-image col-xs-1'><span><img class='col-img' ng-src='{{collection.imageurl}}'></span>
             </div>
             <span class='collection-title col-xs-3'>
               <h3 ui-sref='details({collectionId: collection.id})'><strong>{{collection.name}}</strong></h3>
               <h4>{{collection.description}}</h4>
-              <!-- <button class='delete-btn' ng-click='deleteCollection(collection)'>Delete</button> -->
+              <button class='delete-btn' ng-click='deleteCollection(collection)'>Delete</button>
             </span>
           </div>
 

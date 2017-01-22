@@ -97,6 +97,7 @@
                   <button class='add-btn' ng-click='addRestaurant(restaurant)'>Add</button>
                 </div>
               </div>
+          <!-- </div> -->
 
         </div>
       </div>
@@ -106,14 +107,14 @@
 
 
   <div class='container'>
-    <div class='row'>
+    <div class='row rest-container'>
       <div class='col-xs-12 rest-grid'>
 
       <div class='rest-card col-xs-4' ng-repeat='restaurant in restaurantCollection'>
         <div class='card-container'>
           <span class='restaurant-img col-xs-1'><img class='rest-img' ng-src='{{restaurant.image_url}}'></span>
           <div class='rest-info cols-xs-3'>
-            <div class='rtitle'><a href='{{restaurant.url}}'> {{restaurant.name}}</a></div>
+            <div class='rtitle'>{{restaurant.name}}</div>
             <div class='details-rating'>{{restaurant.rating}}</div>
             <p class='rdetails'>{{restaurant.price}}</p>
             <p class='rdetails'><span ng-repeat='category in restaurant.categories'>{{category.title}}<span ng-hide='$last'>, </span></span></p>

@@ -53,6 +53,10 @@ h4 {
   right: 0;
   cursor: pointer; }
 
+@media (max-width: 426px) {
+  .col-container {
+    margin: 0 auto; } }
+
 .details-header-img {
   height: 150px;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/7jyvkro7i5q-toa-heftiba.jpg");
@@ -86,7 +90,7 @@ h4 {
   background-color: #cb202d;
   color: white;
   height: 80px;
-  width: 500px;
+  width: 490px;
   position: relative;
   text-align: center;
   padding: 14px 0;
@@ -204,6 +208,72 @@ h4 {
   float: right;
   margin: -47px 10px; }
 
+@media (max-width: 769px) {
+  .rest-container {
+    margin: 0 auto; }
+  .detail-col-img {
+    height: 245px;
+    width: 270px; }
+  .detail-title-content {
+    height: 55px;
+    width: 320px;
+    margin: 35px 0px 5px 5px; }
+  .detail-col-title {
+    font-size: 22px;
+    margin: 0 0; }
+  .detail-col-desc {
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0 0; }
+  .edit-add {
+    font-size: 7px;
+    display: flex;
+    justify-content: center; } }
+
+@media (max-width: 426px) {
+  .rest-container {
+    margin: 0 auto; }
+  .detail-col-img {
+    height: 245px;
+    width: 198px; }
+  .detail-title-content {
+    height: 55px;
+    width: 290px;
+    margin: 35px 0px 5px -45px; }
+  .detail-col-title {
+    font-size: 22px;
+    margin: 0 0; }
+  .detail-col-desc {
+    font-weight: 400;
+    font-size: 10px;
+    margin: 0 0; }
+  .edit-add {
+    font-size: 7px;
+    display: flex;
+    justify-content: center; } }
+
+@media (max-width: 321px) {
+  .rest-container {
+    margin: 0 auto; }
+  .detail-col-img {
+    height: 145px;
+    width: 145px;
+    margin: -50px auto; }
+  .detail-title-content {
+    width: 243px;
+    margin: 35px 0px 5px -50px; }
+  .detail-col-title {
+    font-size: 15px;
+    margin: 0 0; }
+  .detail-col-desc {
+    font-weight: 400;
+    font-size: 8px;
+    margin: 0 0; }
+  .edit-add {
+    font-size: 5px;
+    display: flex;
+    justify-content: center; } }
+
 body {
   font: 100% "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
@@ -285,7 +355,6 @@ body {
   color: white; }
 
 .restaurant-row {
-  height: 150px;
   width: 100%;
   margin: 10px 10px;
   background-color: white;
@@ -294,17 +363,19 @@ body {
 
 .rest-image {
   height: 150px;
-  width: 170px;
+  width: 160px;
   float: left;
   margin: 0px 0px 0px -15px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px; }
 
 .rest-inner-left {
-  padding: 10px 0px 0px 15px; }
+  padding: 10px 0px 0px 15px;
+  font-size: 15px; }
 
 .rest-inner-right {
-  padding: 15px 0px 0px 5px; }
+  padding: 10px 0px 0px 15px;
+  font-size: 15px; }
 
 .rest-title {
   font-size: 20px;
@@ -328,7 +399,6 @@ body {
   border-radius: 4px; }
 
 p {
-  font-size: 17px;
   clear: both; }
 
 h3 {
@@ -389,6 +459,81 @@ h4 {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px; }
 
+@media (max-width: 426px) {
+  .home-container {
+    margin: 0 auto; }
+  .rest-image {
+    height: 150px;
+    width: 165px;
+    float: left;
+    margin: 0px 70px 0px 15px;
+    border-radius: 4px; }
+  .rest-inner-left {
+    float: left;
+    bottom: 0;
+    font-size: 10px; }
+  .rest-inner-right {
+    font-size: 10px;
+    padding: 10px 0px 0px 10px; }
+  .rest-title {
+    font-size: 14px; }
+  .rating {
+    height: 20px;
+    width: 23px;
+    background-color: #5ba829;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    padding: 4px 0px;
+    float: left;
+    margin-left: 10px;
+    border-radius: 4px; } }
+
+.login-background {
+  height: 700px;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/GOURMET-STEAK.jpg");
+  background-position: center;
+  background-size: cover;
+  margin-top: -75px; }
+
+.login-container {
+  height: 700px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.fa {
+  font-size: 80px;
+  color: #3b5998; }
+
+.white-back {
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  border-radius: 4px; }
+
+.upper-white {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 0; }
+
+.lower-white {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.fb-btn {
+  background-color: #3b5998;
+  border: none;
+  color: white;
+  height: 40px;
+  width: 200px;
+  font-size: 14px; }
 
 .navbar.transparent.navbar-inverse.navbar-fixed-top {
   background: none;
