@@ -1,5 +1,8 @@
 angular.module('sustenance').controller('detailsCtrl', function($scope, mainSrvc, $stateParams, $rootScope){
 
+  $scope.refresh = function(){
+
+
   $scope.updateCollection = function(Name, Description, Imageurl) {
     mainSrvc.updateCollection($stateParams.collectionId, Name, Description, Imageurl, $rootScope.currentUser.userid);
     $scope.collection_name = '';
@@ -53,4 +56,8 @@ angular.module('sustenance').controller('detailsCtrl', function($scope, mainSrvc
       });
     });
   }
+
+};
+$scope.refresh();
+
 });

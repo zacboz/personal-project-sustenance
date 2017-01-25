@@ -51,7 +51,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click='refresh()'>Close</button>
             <button type="button" class="btn btn-primary" ng-click='updateCollection(collection_name, collection_description, collection_imageurl)'>Save</button>
           </div>
         </div>
@@ -80,7 +80,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click='refresh()'>Close</button>
             <button type="button" class="btn btn-primary" ng-click='searchTerm(term, location)'>Search</button>
           </div>
 
